@@ -119,7 +119,6 @@
 %% Title page, abstract, etc.
 %%
 \def\@maketitle{
-	\onecolumn
 	\vskip 1.5em
 	\begin{flushleft}
 		{\LARGE \@title \par}
@@ -130,29 +129,30 @@
 	\end{flushleft}
 }
 \renewcommand\maketitle{
-	\par
-	\begingroup
-		\thispagestyle{plain}
-		\@maketitle
-	\endgroup
+	\if@twocolumn
+		\twocolumn[
+			\par
+			\begingroup
+				\thispagestyle{plain}
+				\@maketitle
+			\endgroup
+		]
+	\else
+		\par
+		\begingroup
+			\thispagestyle{plain}
+			\@maketitle
+		\endgroup
+	\fi
 }
-
-\def\frontmatter@abstractfont{\normalsize\parindent=0.125in}%
-\def\frontmatter@abstractwidth{6in}
-\def\frontmatter@preabstractspace{0.0\baselineskip}
-\def\frontmatter@postabstractspace{0.0\baselineskip}
-
-\def\abstractname{Abstract}
-\long\def\frontmatter@abstractheading{
- 	\vspace*{-\baselineskip}\vspace*{1.5pt}
- 	\centerline{\itshape\footnotesize\@submitted}
- 	\vspace*{0.13189in}
- 	\begingroup
- 		\abstractname
-  		\vskip 1mm
-  		\par
- 	\endgroup
-	\everypar{\rightskip=0.5in\leftskip=\rightskip}\par
+\renewenvironment{abstract}{
+	\if@twocolumn
+		\section*{\abstractname}
+	\else
+		\begin{flushleft}
+			{\bfseries \abstractname}
+		\end{flushleft}
+	\fi
 }
 
 %%
