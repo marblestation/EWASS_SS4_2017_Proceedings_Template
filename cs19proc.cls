@@ -104,10 +104,10 @@
 
 \def\ps@csheadfoot{
     \let\@mkboth\markboth
-    \def\@evenfoot{\thepage\hfil {\scriptsize Published by Uppsala University Press}}
+    \def\@evenfoot{\thepage\hfil {\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}}
     \def\@evenhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
                     Stellar Systems, and the Sun \hfil \@shortauthors}}
-    \def\@oddfoot{{\scriptsize Published by Uppsala University Press}\hfil \rm\thepage}
+    \def\@oddfoot{{\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}\hfil \rm\thepage}
     \def\@oddhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
                     Stellar Systems, and the Sun\hfil \@shortauthors}}
 }
@@ -115,5 +115,74 @@
 \@twosidetrue
 \ps@csheadfoot
 
+%%
 %% Title page, abstract, etc.
+%%
+\def\@maketitle{
+	\onecolumn
+	\vskip 1.5em
+	\begin{flushleft}
+		{\LARGE \@title \par}
+		\vspace{\baselineskip}
+		{\large \@author}
+		\vspace{\baselineskip}
+		\hrule
+	\end{flushleft}
+}
+\renewcommand\maketitle{
+	\par
+	\begingroup
+		\thispagestyle{plain}
+		\@maketitle
+	\endgroup
+}
+
+\def\frontmatter@abstractfont{\normalsize\parindent=0.125in}%
+\def\frontmatter@abstractwidth{6in}
+\def\frontmatter@preabstractspace{0.0\baselineskip}
+\def\frontmatter@postabstractspace{0.0\baselineskip}
+
+\def\abstractname{Abstract}
+\long\def\frontmatter@abstractheading{
+ 	\vspace*{-\baselineskip}\vspace*{1.5pt}
+ 	\centerline{\itshape\footnotesize\@submitted}
+ 	\vspace*{0.13189in}
+ 	\begingroup
+ 		\abstractname
+  		\vskip 1mm
+  		\par
+ 	\endgroup
+	\everypar{\rightskip=0.5in\leftskip=\rightskip}\par
+}
+
+%%
+%% Sections
+%%
+\setcounter{secnumdepth}{3}
+
+\def\section{
+	\@startsection{section}{1}{\z@}{9pt plus 2pt minus 1pt}{4pt}{\large\bfseries }
+}
+
+\def\subsection{\@startsection{subsection}{2}{\z@}{9pt plus 1pt minus 1pt}{4pt}%
+  {\normalsize\itshape }}
+
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {2ex plus 1ex minus .2ex}{1ex plus .2ex}{\small\itshape }}
+
+\def\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {1.5ex plus 1ex minus .2ex}{-0.5\parindent}{\small\it}}
+
+\def\subparagraph{\@startsection{subparagraph}{5}{\z@}%
+  {1ex plus 1ex minus .2ex}{-0.5\parindent}{\small\it}}
+
+\def\thesection{\@arabic{\c@section}}
+\def\thesubsection{\thesection.\@arabic{\c@subsection}}
+\def\thesubsubsection{\thesubsection.\@arabic{\c@subsubsection}}
+\def\theparagraph{\thesubsubsection.\@arabic{\c@paragraph}}
+\def\p@section        {}
+\def\p@subsection     {}
+\def\p@subsubsection  {}
+\def\p@paragraph      {}
+\def\p@subparagraph   {}
 
