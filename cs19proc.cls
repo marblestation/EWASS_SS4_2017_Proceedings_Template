@@ -32,7 +32,7 @@
 \oddsidemargin=0in
 \evensidemargin=0in
 \parskip=0cm
-\footskip=0.35in
+\footskip=0.40in
 
 
 %% Font specifications (optimize for 66 characters per line)
@@ -41,7 +41,7 @@
 %%
 %% AV,MM, to have 64 lines per column, with textheight 25cm:
 %%
-\textheight=50\baselineskip
+\textheight=49\baselineskip
 \textheight=\baselinestretch\textheight
 \ifdim\textheight>25.2cm\textheight=25.0cm\fi
 
@@ -97,17 +97,19 @@
 
 
 %% Running header and footer 
-\newcommand\shorttitle[1]{\gdef\@versohead{#1}}
-\newcommand\shortauthors[1]{\gdef\@rectohead{#1}}
+\newcommand\shorttitle[1]{\gdef\@shortitle{#1}}
+\newcommand\shortauthors[1]{\gdef\@shortauthors{#1}}
 \shorttitle{\relax}
 \shortauthors{\relax}
 
 \def\ps@csheadfoot{
     \let\@mkboth\markboth
-    \def\@evenfoot{\thepage\hfil}
-    \def\@evenhead{\lower9mm\hbox to\textwidth{ \hfil\sc \shortauthors}}
-    \def\@oddfoot{\hfil \rm\thepage}
-    \def\@oddhead{\lower9mm\hbox to\textwidth{\hfil\sc \shortauthors}}
+    \def\@evenfoot{\thepage\hfil {\scriptsize Published by Uppsala University Press}}
+    \def\@evenhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
+                    Stellar Systems, and the Sun \hfil \@shortauthors}}
+    \def\@oddfoot{{\scriptsize Published by Uppsala University Press}\hfil \rm\thepage}
+    \def\@oddhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
+                    Stellar Systems, and the Sun\hfil \@shortauthors}}
 }
 
 \@twosidetrue
