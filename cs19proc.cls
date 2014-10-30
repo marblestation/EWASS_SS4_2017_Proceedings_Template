@@ -105,11 +105,10 @@
 \def\ps@csheadfoot{
     \let\@mkboth\markboth
     \def\@evenfoot{\thepage\hfil {\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}}
-    \def\@evenhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
-                    Stellar Systems, and the Sun \hfil \@shortauthors}}
+    \def\@evenhead{\lower9mm\hbox to\textwidth{\small \hfil 19$^{\rm th}$ Cambridge Workshop on Cool Stars, 
+                    Stellar Systems, and the Sun }}
     \def\@oddfoot{{\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}\hfil \rm\thepage}
-    \def\@oddhead{\lower9mm\hbox to\textwidth{\small 19th Workshop on Cool Stars, 
-                    Stellar Systems, and the Sun\hfil \@shortauthors}}
+    \def\@oddhead{\lower9mm\hbox to\textwidth{\small \hfil \@shortauthors}}
 }
 
 \@twosidetrue
