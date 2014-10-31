@@ -18,9 +18,11 @@
 \RequirePackage{latexsym}
 \RequirePackage{amssymb}
 \RequirePackage{natbib}
+\RequirePackage{libertine}
+\RequirePackage[T1]{fontenc}
 
 %% Page dimensions 
-\textwidth=7.1in
+\textwidth=7.1in  %7.1
 \columnsep=0.3125in
 \parindent=0.125in
 \voffset=-20mm
@@ -29,8 +31,8 @@
 \topmargin=0in
 \headheight=0.15in
 \headsep=0.5in
-\oddsidemargin=0in
-\evensidemargin=0in
+\oddsidemargin=0.0in
+\evensidemargin=0.0in
 \parskip=0cm
 \footskip=0.40in
 
@@ -54,7 +56,7 @@
 \let\doublespace=\relax
 
 \renewcommand\normalsize{%
-   \@setfontsize\normalsize\@xpt{10.56}
+   \@setfontsize\normalsize\@xpt{10.5}  %10.56
    \abovedisplayskip 2.2mm \@plus2\p@ \@minus1\p@
    \abovedisplayshortskip \z@ \@plus3\p@
    \belowdisplayshortskip 2.2mm \@plus2\p@ \@minus1\p@
@@ -104,11 +106,11 @@
 
 \def\ps@csheadfoot{
     \let\@mkboth\markboth
-    \def\@evenfoot{\thepage\hfil {\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}}
-    \def\@evenhead{\lower9mm\hbox to\textwidth{\small \hfil 19$^{\rm th}$ Cambridge Workshop on Cool Stars, 
+    \def\@evenfoot{\thepage\hfil {\scriptsize Uppsala University Press, June 2016}}
+    \def\@evenhead{\lower9mm\hbox to\textwidth{\small \hfil \@shortauthors}}
+    \def\@oddfoot{{\scriptsize Uppsala University Press, June 2016}\hfil \rm\thepage}
+    \def\@oddhead{\lower9mm\hbox to\textwidth{\small \hfil 19$^{\rm th}$ Cambridge Workshop on Cool Stars, 
                     Stellar Systems, and the Sun }}
-    \def\@oddfoot{{\scriptsize Uppsala University Press, eds: Feiden \& Piskunov}\hfil \rm\thepage}
-    \def\@oddhead{\lower9mm\hbox to\textwidth{\small \hfil \@shortauthors}}
 }
 
 \@twosidetrue
@@ -118,7 +120,11 @@
 %% Title page, abstract, etc.
 %%
 \def\@maketitle{
-	\vskip 1.5em
+    \vspace{-\headsep}\vspace{\headheight}
+    {\footnotesize 19th Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun \\
+     Edited by G.~A.\ Feiden}
+    
+	\vskip 4.0em
 	\begin{flushleft}
 		{\LARGE \@title \par}
 		\vspace{\baselineskip}
