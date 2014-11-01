@@ -119,6 +119,8 @@
 %%
 %% Title page, abstract, etc.
 %%
+\newcommand\abs[1]{\gdef \@abs{#1}}
+
 \def\@maketitle{
     \vspace{-\headsep}\vspace{\headheight}
     {\footnotesize 19th Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun \\
@@ -129,9 +131,14 @@
 		{\LARGE \@title \par}
 		\vspace{\baselineskip}
 		{\large \@author}
-		\vspace{\baselineskip}
-		\hrule
 	\end{flushleft}
+	\hrule
+	\vspace{0.5\baselineskip}
+	\section*{\abstractname}
+	\@abs
+	\vspace{\baselineskip}
+	\hrule
+	\vspace{\baselineskip}
 }
 \renewcommand\maketitle{
 	\if@twocolumn
@@ -148,15 +155,6 @@
 			\thispagestyle{plain}
 			\@maketitle
 		\endgroup
-	\fi
-}
-\renewenvironment{abstract}{
-	\if@twocolumn
-		\section*{\abstractname}
-	\else
-		\begin{flushleft}
-			{\bfseries \abstractname}
-		\end{flushleft}
 	\fi
 }
 
