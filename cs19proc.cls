@@ -101,16 +101,19 @@
 %% Running header and footer 
 \newcommand\shorttitle[1]{\gdef\@shortitle{#1}}
 \newcommand\shortauthors[1]{\gdef\@shortauthors{#1}}
+\newcommand\editors[1]{\gdef\@editors{#1}}
+\newcommand\publisher[1]{\gdef\@publisher{#1}}
+\newcommand\conference[1]{\gdef\@conference{#1}}
+\newcommand\conferencedate[1]{\gdef\@conferencedate{#1}}
 \shorttitle{\relax}
 \shortauthors{\relax}
 
 \def\ps@csheadfoot{
     \let\@mkboth\markboth
-    \def\@evenfoot{\thepage\hfil {\scriptsize Uppsala University Press, June 2016}}
+    \def\@evenfoot{\thepage\hfil {\scriptsize \@publisher, \@conferencedate}}
     \def\@evenhead{\lower9mm\hbox to\textwidth{\small \hfil \@shortauthors}}
-    \def\@oddfoot{{\scriptsize Uppsala University Press, June 2016}\hfil \rm\thepage}
-    \def\@oddhead{\lower9mm\hbox to\textwidth{\small \hfil 19$^{\rm th}$ Cambridge Workshop on Cool Stars, 
-                    Stellar Systems, and the Sun }}
+    \def\@oddfoot{{\scriptsize \@publisher, \@conferencedate}\hfil \rm\thepage}
+    \def\@oddhead{\lower9mm\hbox to\textwidth{\small \hfil \@conference}}
 }
 
 \@twosidetrue
@@ -119,24 +122,39 @@
 %%
 %% Title page, abstract, etc.
 %%
+\newcount\@naffils
+
+\renewcommand\abstract{\relax}
 \newcommand\abs[1]{\gdef \@abs{#1}}
+\newcommand\affil[1]{\gdef \@affils{#1}}
+\newcommand\affiliation[2]{\gdef \@affiln{#1} \gdef \@affil{#2}}
 
 \def\@maketitle{
     \vspace{-\headsep}\vspace{\headheight}
-    {\footnotesize 19th Cambridge Workshop on Cool Stars, Stellar Systems, and the Sun \\
-     Edited by G.~A.\ Feiden}
+    {\footnotesize \@conference \\
+     \copyright\hspace{1mm}\@conferencedate, edited by \@editors}
     
 	\vskip 4.0em
 	\begin{flushleft}
 		{\LARGE \@title \par}
 		\vspace{\baselineskip}
 		{\large \@author}
+		\par\vspace{0.5\baselineskip}
+		\begingroup
+		    \small
+		    $^\@affiln$\hspace{1mm}\@affil
+		\endgroup
 	\end{flushleft}
 	\hrule
+	%\vspace{0.5\baselineskip}
+	\begingroup
+	    \begin{center}
+	        \parbox{0.9\textwidth}{
+	            \section*{\abstractname}
+	            \small \@abs}
+	    \end{center}
+	\endgroup
 	\vspace{0.5\baselineskip}
-	\section*{\abstractname}
-	\@abs
-	\vspace{\baselineskip}
 	\hrule
 	\vspace{\baselineskip}
 }
@@ -189,3 +207,4 @@
 \def\p@paragraph      {}
 \def\p@subparagraph   {}
 
+\endinput
