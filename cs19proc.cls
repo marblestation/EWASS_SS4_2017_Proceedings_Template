@@ -127,12 +127,12 @@
 \renewcommand\abstract{\relax}
 \newcommand\abs[1]{\gdef \@abs{#1}}
 \newcommand\affil[1]{\gdef \@affils{#1}}
-\newcommand\affiliation[2]{\gdef \@affiln{#1} \gdef \@affil{#2}}
+\newcommand\affiliation[1]{\gdef \@affil{#1}}
 
 \def\@maketitle{
     \vspace{-\headsep}\vspace{\headheight}
     {\footnotesize \@conference \\
-     \copyright\hspace{1mm}\@conferencedate, edited by \@editors}
+     Edited by \@editors}
     
 	\vskip 4.0em
 	\begin{flushleft}
@@ -142,7 +142,7 @@
 		\par\vspace{0.5\baselineskip}
 		\begingroup
 		    \small
-		    $^\@affiln$\hspace{1mm}\@affil
+		    \@affil
 		\endgroup
 	\end{flushleft}
 	\hrule
@@ -186,10 +186,10 @@
 }
 
 \def\subsection{\@startsection{subsection}{2}{\z@}{9pt plus 1pt minus 1pt}{4pt}%
-  {\normalsize\itshape }}
+  {\normalsize\bfseries }}
 
 \def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-  {2ex plus 1ex minus .2ex}{1ex plus .2ex}{\small\itshape }}
+  {2ex plus 1ex minus .2ex}{1ex plus .2ex}{\normalsize\itshape }}
 
 \def\paragraph{\@startsection{paragraph}{4}{\z@}%
   {1.5ex plus 1ex minus .2ex}{-0.5\parindent}{\small\it}}
@@ -206,5 +206,28 @@
 \def\p@subsubsection  {}
 \def\p@paragraph      {}
 \def\p@subparagraph   {}
+
+% Some Rather Common Journal abbreviations
+\newcommand{\apj}{ApJ}
+\newcommand{\apjs}{ApJS}
+\newcommand{\apjl}{ApJL}
+\newcommand{\aj}{AJ}
+\newcommand{\aap}{A\&A}
+\newcommand{\aaps}{A\&AS}
+\newcommand{\pasp}{PASP}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\nat}{Nature}
+\newcommand{\aapr}{A\&ARv}
+\newcommand{\araa}{ARA\&A}
+\newcommand{\apss}{Ap\&SS}
+\newcommand{\icarus}{Icarus}
+\newcommand{\an}{AN}
+\newcommand{\actaa}{AcA}
+\newcommand{\rmxaa}{RMxAA}
+\newcommand{\memsai}{MmSAI}
+\newcommand{\solphys}{SoPh}
+\newcommand{\zap}{ZA}
+\newcommand{\ssr}{SSRv}
+\newcommand{\bain}{BAIN}
 
 \endinput
