@@ -207,6 +207,11 @@
 \def\p@paragraph      {}
 \def\p@subparagraph   {}
 
+%% 
+%% References
+%%
+\setlength{\bibsep}{0pt plus 0.3 ex}
+
 % Some Rather Common Journal abbreviations
 \newcommand{\apj}{ApJ}
 \newcommand{\apjs}{ApJS}

@@ -5,8 +5,6 @@
 %% REMOVE
 \usepackage{kantlipsum}
 
-\citestyle{aa}
-
 %% Conference information
 \editors{G.~A. Feiden}
 \publisher{Zenodo}
@@ -81,11 +79,11 @@ Life is difficult without tables, so we herein present a couple of example table
 	\noalign{\smallskip}\hline\hline\noalign{\smallskip}
 	Star & Data & Source \\
 	\noalign{\smallskip}\hline\noalign{\smallskip}
-	Star 1 &  0.5 & \citet{author1}  \\
-	Star 2 &  0.4 & \citet{author2}  \\
-	Star 3 &  0.3 & \citet{author3}  \\
-	Star 4 &  0.2 & \citet{author4}  \\
-	Star 5 &  0.1 & \citet{author5} \\
+	Star 1 &  0.5 & \citet{Salpeter1955}  \\
+	Star 2 &  0.4 & \citet{Allard2011}  \\
+	Star 3 &  0.3 & \citet{Press1974}  \\
+	Star 4 &  0.2 & \citet{Riess1998}  \\
+	Star 5 &  0.1 & \citet{Henyey1959} \\
 	\noalign{\smallskip}\hline
 	\end{tabular*}
 \end{table}
@@ -98,11 +96,11 @@ Life is difficult without tables, so we herein present a couple of example table
 	\noalign{\smallskip}\hline\hline\noalign{\smallskip}
 	Star & Data & Source & Extra Data & Source \\
 	\noalign{\smallskip}\hline\noalign{\smallskip}
-	Star 1 &  0.5 & \citet{author1} &  -1.0  & \citet{author1,author2,author5} \\
-	Star 2 &  0.4 & \citet{author2} &  -2.0  & \citet{author2,author3}  \\
-	Star 3 &  0.3 & \citet{author3} &  -3.0  & \citet{author2,author4}  \\
-	Star 4 &  0.2 & \citet{author4} &  -4.0  & \citet{author4,author5}  \\
-	Star 5 &  0.1 & \citet{author5} &  -5.0  & \citet{author3} \\
+	Star 1 &  0.5 & \citet{Salpeter1955} &  -1.0  & \citet{Salpeter1955, Henyey1959, Press1974} \\
+	Star 2 &  0.4 & \citet{Allard2011} &  -2.0  & \citet{Salpeter1955, Press1974}  \\
+	Star 3 &  0.3 & \citet{Press1974} &  -3.0  & \citet{Allard2011, Riess1998}  \\
+	Star 4 &  0.2 & \citet{Riess1998} &  -4.0  & \citet{Riess1998, Henyey1959}  \\
+	Star 5 &  0.1 & \citet{Henyey1959} &  -5.0  & \citet{Press1974} \\
 	\noalign{\smallskip}\hline
 	\end{tabular*}
 \end{table*}
@@ -112,21 +110,7 @@ Life is difficult without tables, so we herein present a couple of example table
 \section*{Acknowledgments}
 {Thank you to the world and myself. Mostly myself. Without me, I would have no results and no paper.}
 
-%% You may use any bibliography style that you want.
-\begin{thebibliography}{5}
-\setlength{\itemsep}{0mm}
-\small
-
-\bibitem[\r{A}ngstrom et al.(1861)]{author1} \r{A}ngstrom, A., et al. 1861, Prestigous Journal, 1, 1
-
-\bibitem[Celsius et al.(1906)]{author2} Celsius, A., et al. 1735, Great Book
-
-\bibitem[Galilei(1630)]{author3} Galilei, G. 1630, Long-lost Book
-
-\bibitem[Newton(1699)]{author4} Newton, I. 1899, Decent Book
-
-\bibitem[Newton(1715)]{author5} Newton, I. \& Leibniz, G.~W. 1715, Yet-another Book
-
-\end{thebibliography}
+\bibliographystyle{cs19proc}
+\bibliography{example.bib}
 
 \end{document}
