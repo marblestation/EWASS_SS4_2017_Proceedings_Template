@@ -1,5 +1,5 @@
 %%
-%% This is file `cs19proc.bst',
+%% This is file `ewass_ss4proc.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
@@ -8,7 +8,7 @@
 %% physjour.mbs  (with options: `ay,ast,pres,vonx,nm-rev,jnrlst,nmlm,x5,m5,keyxyr,dt-beg,yr-par,note-yr,tit-it,atit-u,jtit-x,jttl-rm,vnum-x,volp-com,jpg-1,num-xser,ser-vol,add-pub,pub-par,isbn,issn,edpar,edby,pp,ed,abr,ednx,mth-bare,ord,jabr,jaa,amper,etal-it,nfss,,{}')
 %% merlin.mbs  (with options: `tail,ay,ast,pres,vonx,nm-rev,jnrlst,nmlm,x5,m5,keyxyr,dt-beg,yr-par,note-yr,tit-it,atit-u,jtit-x,jttl-rm,vnum-x,volp-com,jpg-1,num-xser,ser-vol,add-pub,pub-par,isbn,issn,edpar,edby,pp,ed,abr,ednx,mth-bare,ord,jabr,jaa,amper,etal-it,nfss,,{}')
 %% ----------------------------------------
-%% *** Cool Stars 19 Proceedings ***
+%% *** EWASS SS4 Star-planet interactions Proceedings ***
 %% 
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
@@ -1666,4 +1666,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `cs19proc.bst'.
+%% End of file `ewass_ss4proc.bst'.

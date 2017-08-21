@@ -4,3 +4,5 @@
 *.bbl
 *.blg
 *.dbj
+*.fdb_latexmk
+*.fls

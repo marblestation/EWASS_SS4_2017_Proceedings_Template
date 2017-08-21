@@ -1,4 +1,6 @@
-CS19 Proceedings
-================
-LaTeX and BibTeX style files for compiling proceedings to the 19th Cambridge Workshop
-on Cool Stars, Stellar Systems, and the Sun.
+EWAS SS4 Star-Planet Proceedings
+================================
+LaTeX and BibTeX style files for compiling proceedings to the EWASS Special 
+Session 4 - Star-planet interactions.
+
+Based on [CS19 Proceedings template](https://github.com/gfeiden/cs19proceedings)

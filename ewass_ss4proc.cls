@@ -1,4 +1,4 @@
-%% LaTeX document class for Cool Stars 19 Proceedings
+%% LaTeX document class for EWASS SS4 Proceedings
 %%
 %% Author: Gregory A. Feiden
 %%   Date: 2014 Oct 30
@@ -8,8 +8,8 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 
-\ProvidesClass{cs19proc}[2014/10/30 
-    v0.1 Cool Stars 19 document class]
+\ProvidesClass{ewass_ss4proc}[2014/10/30 
+    v0.1 EWAS SS4 Star-planet interactions document class]
 
 \LoadClass[11pt,twocolumn]{article}
 
