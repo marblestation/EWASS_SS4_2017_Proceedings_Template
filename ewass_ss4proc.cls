@@ -102,6 +102,7 @@
 \newcommand\shorttitle[1]{\gdef\@shortitle{#1}}
 \newcommand\shortauthors[1]{\gdef\@shortauthors{#1}}
 \newcommand\editors[1]{\gdef\@editors{#1}}
+\newcommand\editorsurl[1]{\gdef\@editorsurl{#1}}
 \newcommand\publisher[1]{\gdef\@publisher{#1}}
 \newcommand\conference[1]{\gdef\@conference{#1}}
 \newcommand\conferencedate[1]{\gdef\@conferencedate{#1}}
@@ -132,7 +133,8 @@
 \def\@maketitle{
     \vspace{-\headsep}\vspace{\headheight}
     {\footnotesize \@conference \\
-     Edited by \@editors}
+     Edited by \@editors \\
+     \@editorsurl}
     
 	\vskip 4.0em
 	\begin{flushleft}
